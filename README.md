@@ -272,9 +272,9 @@ python .agents/skills/responsible-research/scripts/audit_research_pipeline.py
 
 ---
 
-## Citation & License
+## Citation & Terms of Use
 
-If using this dataset, monograph, or visualizations in academic research or policy analysis, please cite:
+If referencing this monograph, datasets, or visualizations in academic research or policy analysis, please cite:
 
 ```bibtex
 @techreport{venezuela_productivity_1970_2026,
@@ -286,5 +286,8 @@ If using this dataset, monograph, or visualizations in academic research or poli
 }
 ```
 
-Licensed under the [MIT License](file:///LICENSE) for software and [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) for datasets and figures.
+### Rights Notice
+**All Rights Reserved.** This research repository, including the compiled longitudinal datasets, analytical pipelines, and visualization assets, is proprietary. Unauthorized commercial reproduction, redistribution, or modification is prohibited without prior written permission from the authors.
+
+
 
