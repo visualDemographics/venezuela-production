@@ -1,0 +1,30 @@
+year,historical_event_break,real_gdp_growth_pct,inflation_cpi_annual_pct,exchange_rate_bs_per_usd,crude_oil_production_mbpd,oil_export_price_usd_bbl,fiscal_oil_revenue_pct_gdp,methodological_source
+1970,Consolidation of oil concessions regime; Caldera I administration,7.7,3.8,4.50,3.708,1.80,24.1,BCV Series Historicas / Baptista (2002) / EIA
+1971,Reversion Law passed (Ley de Bienes Afectos a Reversión),1.5,2.6,4.50,3.549,2.14,24.8,BCV Series Historicas / Baptista (2002) / EIA
+1972,Pre-boom fiscal expansion; oil conservation discussions,1.3,2.9,4.50,3.220,2.26,23.9,BCV Series Historicas / Baptista (2002) / EIA
+1973,Yom Kippur War; first OPEC price shock,7.1,5.6,4.30,3.366,3.71,28.5,BCV Series Historicas / Baptista (2002) / EIA
+1974,1974 Oil Nationalization Act drafted; Presidential Reversion Commission,2.1,11.8,4.30,2.976,10.53,44.2,BCV / Baptista (2002) / Gaceta Oficial No. 1.769
+1975,Ley Orgánica de Reserva de Hidrocarburos enacted; PDVSA created,2.9,7.9,4.30,2.346,10.42,39.8,BCV / Baptista (2002) / Decree 1.123
+1976,PDVSA takes operational control; state monopoly commences,7.7,6.9,4.30,2.294,11.15,35.4,BCV / Baptista (2002) / EIA
+1977,Peak of Gran Venezuela investment drive (V plan de la nación),6.3,8.0,4.30,2.238,12.54,33.1,BCV / Baptista (2002) / EIA
+1978,Peak per-capita GDP before secular collapse; external debt surge,2.4,7.2,4.30,2.166,12.28,30.5,Hausmann & Rodriguez (2014) / BCV
+1979,Iranian Revolution; second OPEC oil price surge,0.8,20.4,4.30,2.356,17.38,36.2,BCV Series Historicas / Baptista (2002)
+1980,Cooling of oil boom; rising domestic interest burdens,-4.4,19.7,4.30,2.168,26.44,38.9,BCV Series Historicas / World Bank
+1981,Peak nominal oil price pre-Chavez ($29.71/bbl); capital outflows,-1.3,9.9,4.30,2.108,29.71,37.1,BCV Series Historicas / World Bank
+1982,Mexican debt default; accelerating capital flight from Venezuela,2.6,7.6,4.30,1.895,27.47,31.4,BCV Series Historicas / World Bank
+1983,1983 Viernes Negro (Feb 18); RECADI differential exchange tiers,-9.9,6.8,4.30,1.801,25.31,27.8,BCV / Decree 1.842 / World Bank
+1984,Post-devaluation fiscal stabilization; Lusinchi administration,5.2,14.7,7.50,1.798,26.70,29.6,BCV Series Historicas / Baptista (2002)
+1985,Weak recovery; OPEC quota constraints,0.9,9.1,7.50,1.677,25.90,28.1,BCV Series Historicas / Baptista (2002)
+1986,Global oil price collapse to $12.82/bbl; fiscal reserves depleted,6.1,12.7,7.50,1.645,12.82,18.4,BCV Series Historicas / Baptista (2002)
+1987,Exchange devaluation to Bs 14.50; accelerating inflation,4.8,40.3,14.50,1.752,16.32,20.5,BCV Series Historicas / Baptista (2002)
+1988,Depletion of liquid operating foreign exchange reserves,6.5,35.5,14.50,1.903,13.62,17.9,BCV Series Historicas / Baptista (2002)
+1989,1989 Caracazo (Feb 27-28); El Gran Viraje IMF package float,-8.6,81.0,35.68,1.907,16.87,24.3,BCV Informes Economicos / World Bank
+1990,Post-reform export recovery; Gulf War oil price spike,6.5,40.7,47.05,2.137,20.33,26.8,BCV Series Historicas / World Bank
+1991,Economic expansion under trade liberalization and privatization,9.7,34.2,56.82,2.375,15.92,23.5,BCV Series Historicas / World Bank
+1992,1992 Coup d'Etat attempt (Feb 4); political crisis begins,6.1,31.4,68.37,2.371,14.91,21.2,BCV Informes Economicos / World Bank
+1993,Impeachment of CAP; Interim Velásquez; banking distress emerges,0.3,38.1,90.83,2.450,13.34,19.8,BCV Series Historicas / World Bank
+1994,1994 Banco Latino crisis (Jan 16); FOGADE bailout; OTAC controls,-2.3,60.8,148.50,2.588,13.23,17.6,Ruth de Krivoy (2000) / BCV / IMF
+1995,Exchange rate pegged at Bs 170 then devalued to Bs 290 in Dec,4.0,59.9,176.84,2.750,14.84,18.2,BCV Series Historicas / Baptista (2002)
+1996,Agenda Venezuela stabilization; crawling peg band; inflation peak,-0.2,103.7,419.50,2.943,18.39,24.7,BCV Informes Economicos / IMF
+1997,Apertura Petrolera foreign joint ventures expand; GDP rebound,6.4,50.0,488.80,3.100,16.32,23.1,BCV Series Historicas / World Bank
+1998,1998 Chavez presidential election (Dec 6); global oil price collapse,0.3,35.8,547.55,3.119,10.57,15.8,BCV Informes Economicos / World Bank / CNE

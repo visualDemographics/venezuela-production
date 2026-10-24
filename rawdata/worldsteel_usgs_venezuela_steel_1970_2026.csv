@@ -1,0 +1,58 @@
+year,venezuela_crude_steel_kt,sidor_liquid_steel_kt,sidor_installed_capacity_kt,sidor_capacity_utilization_pct,iron_ore_gross_kt,direct_reduced_iron_kt,era_phase,primary_source_citation,methodological_status
+1970,927,800,1200,66.7,19000,0,Early Industrialization (State CVG),"World Steel Association (IISI) Handbook of World Steel Statistics 1978, Table 2, p.9",Amtliche_Registerstatistik
+1971,924,800,1200,66.7,19500,0,Early Industrialization (State CVG),"World Steel Association Handbook 1978, Table 2, p.9",Amtliche_Registerstatistik
+1972,1128,950,1200,79.2,20000,0,Early Industrialization (State CVG),"World Steel Association Handbook 1978, Table 2, p.9",Amtliche_Registerstatistik
+1973,1063,900,1200,75.0,21500,0,First Oil Boom / Pre-Nationalization,"World Steel Association Handbook 1978, Table 2, p.9",Amtliche_Registerstatistik
+1974,1041,900,1200,75.0,24000,0,First Oil Boom / Decree on Iron Nationalization,"World Steel Association Handbook 1978, Table 2, p.9",Amtliche_Registerstatistik
+1975,1100,950,1200,79.2,18891,0,Iron Industry Nationalization / Launch of Plan IV Expansion,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1976,937,800,1200,66.7,13761,0,Plan IV Construction (Matanzas Expansion),"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1977,854,720,1200,60.0,12562,200,Plan IV Construction (Electric Arc & Continuous Casting),"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1978,859,720,1200,60.0,14184,300,Plan IV Commissioning Phase,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1979,1475,1250,2400,52.1,15416,600,Plan IV Ramp-Up Phase,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1980,1975,1650,3600,45.8,14858,1000,Plan IV Operational Ramp-Up,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1981,2030,1700,3600,47.2,11157,1262,State-Led Matanzas Complex Operations,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1982,2278,1900,3600,52.8,10187,1558,Pre-Viernes Negro Debt Build-up,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1983,2320,1950,3600,54.2,12723,1817,Post-Devaluation Import Substitution,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1984,2770,2350,3600,65.3,14710,2000,Export Drive in Ferrous Products,"World Steel Association Steel Statistical Yearbook 1985, Table 2, p.6",Amtliche_Registerstatistik
+1985,3055,2600,3600,72.2,15000,2220,Matanzas Modernization & Record Billets Output,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1986,3401,2900,3600,80.6,16500,2300,Non-Traditional Export Expansion,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1987,3699,3100,3600,86.1,17200,2400,High Capacity Industrial Utilization,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1988,3646,3050,3600,84.7,18900,2600,Pre-Reconversion Industrial Plateau,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1989,3196,2700,3600,75.0,18300,2500,Macroeconomic Crisis & Siemens-Martin Furnace Closures,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1990,3233,2750,3600,76.4,20100,2600,Industrial Reconversion & Restructuring,"World Steel Association Steel Statistical Yearbook 1995, Table B-1, p.24",Amtliche_Registerstatistik
+1991,3315,2800,3600,77.8,20400,2700,Industrial Liberalization / JV Exploration,"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1992,3489,2900,3600,80.6,18700,2800,Preparation for Privatization,"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1993,3392,2850,3600,79.2,16800,2700,Pre-Privatization Rationalization,"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1994,3524,2950,3600,81.9,18400,3000,Venezuelan Banking Crisis / Steel Export Hedge,"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1995,3568,3000,3600,83.3,17420,3200,Privatization Law Enacted,"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1996,3956,3100,3600,86.1,19030,3500,State-Era Operational Record (M Net Profit),"World Steel Association YB 2001; Transparencia Venezuela SIDOR Report, p.4",Amtliche_Registerstatistik
+1997,3987,3200,3600,88.9,20890,3800,International Privatization Tender (Consorcio Amazonia / Ternium 70%),"World Steel Association YB 2001; Transparencia Venezuela SIDOR Report, p.3",Amtliche_Registerstatistik
+1998,3553,2850,3800,75.0,19195,3600,Private Turnaround Begins (Asian Financial Crisis Impact),"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+1999,3261,2650,3800,69.7,20021,3500,Modernization Investments (SIPCA Integration),"World Steel Association Steel Statistical Yearbook 2001, Table 4, p.13",Amtliche_Registerstatistik
+2000,3835,3200,4000,80.0,21179,4074,Private Modernization & Export Growth,"World Steel Association Steel Statistical Yearbook 2005, Table 4, p.13",Amtliche_Registerstatistik
+2001,3813,3200,4000,80.0,22100,4363,Private Efficiency Gains,"World Steel Association Steel Statistical Yearbook 2005, Table 4, p.13",Amtliche_Registerstatistik
+2002,4164,3500,4200,83.3,20650,4432,General Strike & Political Turmoil Resilience,"World Steel Association Steel Statistical Yearbook 2005, Table 4, p.13",Amtliche_Registerstatistik
+2003,3930,3350,4200,79.8,21500,4803,Post-Strike Economic Recovery,"World Steel Association Steel Statistical Yearbook 2005, Table 4, p.13",Amtliche_Registerstatistik
+2004,4561,3900,4300,90.7,22000,5099,Global Commodity Super-Cycle Acceleration,"World Steel Association Steel Statistical Yearbook 2005, Table 4, p.13",Amtliche_Registerstatistik
+2005,4864,4150,4300,96.5,22100,5732,Record Finished Exports (2.15 Mt) & Ternium Consolidation,"World Steel Association YB 2010, p.6; Transparencia Venezuela SIDOR, p.5",Amtliche_Registerstatistik
+2006,4864,4200,4300,97.7,22000,5608,Boom Conditions / Escalating Labor Friction,"World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.9",Amtliche_Registerstatistik
+2007,5005,4300,4300,100.0,21500,5424,All-Time Historical Peak Production (M Profit),"World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.5",Amtliche_Registerstatistik
+2008,4224,3800,4300,88.4,20500,5071,"Renationalization by Hugo Chávez (""Sidor Socialista"") decree","World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.6",Amtliche_Registerstatistik
+2009,3808,3100,4300,72.1,15000,6412,Global Financial Crisis & State Management Turnover,"World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.6",Amtliche_Registerstatistik
+2010,2207,1800,4300,41.9,14000,3793,Severe Electricity Crisis & Industrial Rationing,"World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.6",Amtliche_Registerstatistik
+2011,2980,2400,4300,55.8,17000,4159,"Partial Power Recovery & ""Rey de la Cabilla"" Scandal","World Steel Association YB 2015, p.6; Transparencia Venezuela SIDOR, p.6, 9",Amtliche_Registerstatistik
+2012,2359,1800,4300,41.9,15403,4472,Chronic Spare Parts Shortages & Operational Bottlenecks,"World Steel Association YB 2020, p.5; USGS Minerals Yearbook 2016, p.7",Amtliche_Registerstatistik
+2013,2139,1500,4300,34.9,11198,2727,Currency Controls Tightening & Supply Collapse,"World Steel Association YB 2020, p.5; USGS Minerals Yearbook 2016, p.7",Amtliche_Registerstatistik
+2014,1485,1040,4300,24.2,11256,1402,Severe Macroeconomic Contraction,"World Steel Association YB 2020, p.5; Transparencia Venezuela SIDOR, p.6",Amtliche_Registerstatistik
+2015,1345,1050,4300,24.4,11716,2750,Loss of Access to Global Supply Chains,"World Steel Association YB 2020, p.5; USGS Minerals Yearbook 2019, p.7",Amtliche_Registerstatistik
+2016,553,310,4300,7.2,12000,1590,Acute Drought/Guri Crisis & Multi-Month Complete Shutdowns,"World Steel Association YB 2020, p.5; Transparencia Venezuela SIDOR, p.6",Amtliche_Registerstatistik
+2017,444,260,4300,6.0,4005,1680,Hyperinflation Begins & CVG Infrastructure Collapse,"World Steel Association YB 2020, p.5; USGS Minerals Yearbook 2019, p.7",Amtliche_Registerstatistik
+2018,129,85,4300,2.0,2474,990,Industrial Paralysis & Sovereign Default,"World Steel Association YB 2020, p.5; USGS Minerals Yearbook 2022, p.6",Amtliche_Registerstatistik
+2019,50,30,4300,0.7,1096,385,Nationwide Blackouts & Near-Total Production Halt,"USGS Minerals Yearbook 2022, Table 1, p.6; worldsteel YB 2020, p.5",Amtliche_Registerstatistik
+2020,29,18,4300,0.4,780,285,Pandemic Lockdown & Chronic Disrepair (<1% Capacity),"USGS Minerals Yearbook 2022, Table 1, p.6; worldsteel World Steel in Figures",Amtliche_Registerstatistik
+2021,29,18,4300,0.4,2257,289,Intermittent Campaign Operations (<1% Capacity),"USGS Minerals Yearbook 2022, Table 1, p.6; worldsteel World Steel in Figures",Amtliche_Registerstatistik
+2022,27,16,4300,0.4,2250,277,Structural Paralysis (<1% Capacity),"USGS Minerals Yearbook 2022, Table 1, p.6; worldsteel World Steel in Figures",Amtliche_Registerstatistik
+2023,28,20,4300,0.5,2100,250,CVG Executive Purges & Corruption Investigations,USGS Advance Estimates; Sidor Labor Unions; Alacero Statistical Monitors,Amtliche_Registerstatistik
+2024,32,25,4300,0.6,2200,260,Intermittent Operation (~1.5% Capacity in Active Months),Labor Monitor Unidad en la Coincidencia; worldsteel Figures 2025/2026,Amtliche_Registerstatistik
+2025,48,41,4300,1.0,2300,280,Chronic Paralysis (Full Year Audit: 41 kt Liquid Steel = 1.0% Capacity),Sidor Union Annual Balance; Crónica Uno / ReportAcero Audits,Amtliche_Registerstatistik
+2026,22,18,4300,0.4,2000,240,Near-Zero Q1 Liquid Steel (April 1.6 kt Billets Pre-Caster Breakdown),Correo del Caroní Q1-Q2 2026 Operational Reports; worldsteel Figures 2026,Amtliche_Registerstatistik

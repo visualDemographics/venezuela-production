@@ -1,0 +1,10 @@
+file,url,retrieved,bytes,sha256
+faostat_venezuela_wood_forestry_1970_2026.csv,https://www.fao.org/faostat/en/#data/FO,2026-10-24,1378212,d9a3205af65d953b80f89d45d1c41d85481443be504b6b6c5f1b912cc26a3d41
+latam_peers_commodity_services_1970_2026.csv,https://data.worldbank.org / https://asb.opec.org / https://worldsteel.org,2026-10-24,16842,a2523f776a940c4ea531df5a40b229923911ca28b80389a15059053a2a52a056
+literature_empirical_benchmarks.csv,https://asb.opec.org / https://pubs.usgs.gov / https://population.un.org,2026-10-24,13719,b9b51529da7979c115b95fa9d8aa6aad2f7c75575b80acd9269c06568c1c3dae
+opec_eia_venezuela_oil_1970_2026.csv,https://asb.opec.org / https://www.eia.gov/international/data/world,2026-10-24,11503,752885123be2e1abb64039dd295e3a5e91997485c3a3083f4b9e60c68778f69c
+un_wb_venezuela_services_1970_2026.csv,https://unstats.un.org/unsd/snaama / https://data.worldbank.org,2026-10-24,10394,acd7660fd830ddec62dd5085647d4e918cf936940a72e2437c62dcd4acc04f55
+un_wpp_encovi_venezuela_demographics_1970_2026.csv,https://population.un.org/wpp/ / https://www.proyectoencovi.com,2026-10-24,15072,632465cb03beabccfac99b36c036c89af2e1f9a46193e69f46895acc15a88316
+usgs_cvg_venezuela_aluminum_1970_2026.csv,https://pubs.usgs.gov/myb/vol3/ / https://www.world-aluminium.org,2026-10-24,10808,2cf68d9e6d615f643d6962e60fd281a437747f3af01bb8ab0d2a49a8a57e84e0
+venezuela_historical_regimes_1970_1998.csv,https://www.bcv.org.ve/estadisticas/series-historicas,2026-10-24,4091,373bd20b4841ab5e0649aa256285c5c51a7bc8cbf6195bab52032d8fca64c5f7
+worldsteel_usgs_venezuela_steel_1970_2026.csv,https://worldsteel.org / https://pubs.usgs.gov/myb/vol3/,2026-10-24,10356,90b4dce45f17d510cb0bc9448e6b23b20beafc3a840ddecb5cd5de8a67b6bb0c

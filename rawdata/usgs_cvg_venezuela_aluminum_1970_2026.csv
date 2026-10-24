@@ -1,0 +1,58 @@
+year,country,commodity,primary_aluminum_total_kt,alcasa_aluminum_kt,venalum_aluminum_kt,bauxite_kt,alumina_kt,source_agency,data_status,operational_milestone_notes
+1970,Venezuela,primary_aluminum,22.5,22.5,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Alcasa Line 1 Phase II expansion completed to 22.5 kt/yr nominal capacity. Alumina imported.
+1971,Venezuela,primary_aluminum,22.8,22.8,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Alcasa domestic and Andean Pact exports.
+1972,Venezuela,primary_aluminum,24.5,24.5,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Alcasa full Line 1 capacity utilization.
+1973,Venezuela,primary_aluminum,27.2,27.2,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Venalum incorporated (CVG 80% with Japanese consortium Showa Denko Kobe Steel Marubeni Sumitomo 20%).
+1974,Venezuela,primary_aluminum,29.5,29.5,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Carlos Andres Perez administration initiates Fifth National Plan; oil nationalization revenues fund heavy industry.
+1975,Venezuela,primary_aluminum,45.0,45.0,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Alcasa Phase III expansion begins ramping up toward 50-55 kt.
+1976,Venezuela,primary_aluminum,43.0,43.0,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Construction begins on Venalum smelter complex at Matanzas (Puerto Ordaz).
+1977,Venezuela,primary_aluminum,54.0,54.0,0.0,0.0,0.0,USBM/Alcasa,Amtliche_Registerstatistik,Alcasa Line 2 operations; Interalumina established to build domestic alumina refinery.
+1978,Venezuela,primary_aluminum,112.0,54.0,58.0,0.0,0.0,USBM/Venalum,Amtliche_Registerstatistik,Venalum formally inaugurated on June 10 1978; initial reduction cells commissioned.
+1979,Venezuela,primary_aluminum,225.0,55.0,170.0,0.0,0.0,USBM/Venalum,Amtliche_Registerstatistik,Venalum potlines 1-2 ramp-up; Bauxiven founded to develop Los Pijiguaos bauxite deposit.
+1980,Venezuela,primary_aluminum,314.1,56.1,258.0,0.0,0.0,USBM/BGS,Amtliche_Registerstatistik,Venalum potlines 3-4 commissioned; total primary aluminum output exceeds 300 kt.
+1981,Venezuela,primary_aluminum,335.0,57.0,278.0,0.0,0.0,USBM/BGS,Amtliche_Registerstatistik,Smelters leverage Guri Stage I hydroelectric power; export orientation to Japan and US.
+1982,Venezuela,primary_aluminum,360.0,60.0,300.0,0.0,0.0,USBM/BGS,Amtliche_Registerstatistik,Latin American debt crisis builds; aluminum exports critical non-oil FX earner.
+1983,Venezuela,primary_aluminum,375.0,85.0,290.0,0.0,300.0,USBM/CVG,Amtliche_Registerstatistik,Viernes Negro currency devaluation (4.30 to floating Bs/USD); Interalumina refinery commissioned.
+1984,Venezuela,primary_aluminum,405.0,115.0,290.0,0.0,800.0,USBM/CVG,Amtliche_Registerstatistik,Alcasa Line 3 expansion ramps up; Interalumina expands alumina production to 800 kt.
+1985,Venezuela,primary_aluminum,435.0,120.0,315.0,0.0,1100.0,USBM/CVG,Amtliche_Registerstatistik,Interalumina achieves domestic alumina self-sufficiency; imports eliminated.
+1986,Venezuela,primary_aluminum,395.0,118.0,277.0,0.0,1200.0,USBM/CVG,Amtliche_Registerstatistik,Guri Dam Final Stage (Stage II) inaugurated raising generating capacity to 10000 MW.
+1987,Venezuela,primary_aluminum,412.1,122.1,290.0,250.0,1300.0,USBM/CVG,Amtliche_Registerstatistik,Commercial bauxite mining commences at Los Pijiguaos (Bauxiven); barged down Orinoco River.
+1988,Venezuela,primary_aluminum,521.5,151.5,370.0,700.0,1350.0,USBM/CVG,Amtliche_Registerstatistik,Venalum Line 5 expansion (V Line) begins testing; Alcasa Line 4 ramp-up.
+1989,Venezuela,primary_aluminum,546.0,156.0,390.0,1100.0,1400.0,USBM/CVG,Amtliche_Registerstatistik,El Gran Viraje IMF package and Caracazo social unrest; Venalum Line 5 fully operational.
+1990,Venezuela,primary_aluminum,581.0,161.0,420.0,2500.0,1450.0,USGS/CVG,Amtliche_Registerstatistik,Venezuela solidifies position as largest installed primary aluminum capacity in Latin America.
+1991,Venezuela,primary_aluminum,579.0,164.0,415.0,3000.0,1500.0,USGS/CVG,Amtliche_Registerstatistik,Los Pijiguaos bauxite reaches 3.0 Mt extraction; rail-to-barge transfer at El Jobal.
+1992,Venezuela,primary_aluminum,605.0,180.0,425.0,3500.0,1600.0,USGS/CVG,Amtliche_Registerstatistik,Feb 4 and Nov 27 coup attempts; primary smelter operations continue uninterrupted.
+1993,Venezuela,primary_aluminum,610.0,185.0,425.0,4000.0,1650.0,USGS/CVG,Amtliche_Registerstatistik,Impeachment of Carlos Andres Perez; interim Velasquez government.
+1994,Venezuela,primary_aluminum,642.0,202.0,440.0,4500.0,1700.0,USGS/CVG,Amtliche_Registerstatistik,Banco Latino collapse; CVG Bauxilum created via merger of Bauxiven and Interalumina.
+1995,Venezuela,primary_aluminum,640.0,205.0,435.0,5000.0,1750.0,USGS/CVG,Amtliche_Registerstatistik,Rafael Caldera Agenda Venezuela; planned privatization of CVG aluminum complex initiated.
+1996,Venezuela,primary_aluminum,629.0,199.0,430.0,5200.0,1780.0,USGS/CVG,Amtliche_Registerstatistik,Aluminum privatization auctions fail repeatedly due to high debt liabilities and labor conditions.
+1997,Venezuela,primary_aluminum,642.0,205.0,437.0,5400.0,1800.0,USGS/CVG,Amtliche_Registerstatistik,All-time historical production peak of Venezuelan primary aluminum (642 kt).
+1998,Venezuela,primary_aluminum,585.0,185.0,400.0,4800.0,1750.0,USGS/CVG,Amtliche_Registerstatistik,Final aluminum privatization auction collapses; election of Hugo Chavez in December.
+1999,Venezuela,primary_aluminum,570.0,175.0,395.0,4500.0,1700.0,USGS/CVG,Amtliche_Registerstatistik,New Constitution of the Bolivarian Republic; state retention of basic industries affirmed.
+2000,Venezuela,primary_aluminum,580.0,180.0,400.0,4400.0,1750.0,USGS/CVG,Amtliche_Registerstatistik,Consolidation under CVG corporate governance; Reynolds minority stake bought out.
+2001,Venezuela,primary_aluminum,600.0,180.0,420.0,4500.0,1800.0,USGS/CVG,Amtliche_Registerstatistik,High global primary aluminum prices; Venalum operates near nominal capacity.
+2002,Venezuela,primary_aluminum,605.0,178.0,427.0,4600.0,1820.0,USGS/CVG,Amtliche_Registerstatistik,April 2002 coup attempt and December 2002-February 2003 general strike; smelters maintain base operations.
+2003,Venezuela,primary_aluminum,605.5,175.5,430.0,5200.0,1850.0,USGS/CVG,Amtliche_Registerstatistik,CADIVI exchange controls introduced; CVG export revenues increasingly redirected.
+2004,Venezuela,primary_aluminum,601.3,165.3,436.0,5842.0,1882.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Bauxite 5842 kt alumina 1882 kt primary unalloyed aluminum 601.3 kt.
+2005,Venezuela,primary_aluminum,623.5,185.5,438.0,5900.0,1900.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 623.5 kt; Alcasa cogestion (worker co-management) experiment.
+2006,Venezuela,primary_aluminum,615.1,174.1,441.0,5928.0,1920.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 615.1 kt; Venalum records all-time facility output record of 441 kt.
+2007,Venezuela,primary_aluminum,615.7,180.7,435.0,5500.0,1892.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 610-615.7 kt; Alcasa produced 180680 metric tons.
+2008,Venezuela,primary_aluminum,610.0,171.0,439.0,5500.0,1900.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 610.0 kt; SIDOR renationalized; CVG cash flows redirected to FONDEN.
+2009,Venezuela,primary_aluminum,415.0,135.0,280.0,3820.0,1600.0,USGS/CVG,Amtliche_Registerstatistik,Severe El Nino drought at Guri Dam; Chavez orders forced power curtailment; Alcasa Line 1 permanently shuttered.
+2010,Venezuela,primary_aluminum,400.0,142.0,258.0,2750.0,1410.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 400.0 kt; nationwide electricity emergency; potline cell de-rating.
+2011,Venezuela,primary_aluminum,330.0,69.3,260.7,2455.0,1265.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 330.0 kt; Venalum produces 260.7 kt; Alcasa down to 69.3 kt.
+2012,Venezuela,primary_aluminum,208.0,55.6,152.4,2286.0,808.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 208.0 kt; Venalum 152.4 kt; Bauxilum alumina shortage starves potlines.
+2013,Venezuela,primary_aluminum,186.0,46.0,140.0,2341.0,580.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 186.0 kt; Chavez death and election of Nicolas Maduro; FX crunch.
+2014,Venezuela,primary_aluminum,145.0,35.5,109.5,2346.0,500.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Venalum drops to 109.5 kt (25% capacity); acute shortage of carbon anodes and cryolite.
+2015,Venezuela,primary_aluminum,119.7,28.5,91.2,992.0,350.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 119.1-119.7 kt; Alcasa 28.5 kt; Venalum 91.2 kt; Bauxilum drops below 1 Mt bauxite.
+2016,Venezuela,primary_aluminum,86.0,18.0,68.0,909.0,301.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 86.0 kt; acute electricity crisis; Guri water level reaches critical low.
+2017,Venezuela,primary_aluminum,80.0,15.0,65.0,550.0,240.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 80.0 kt; US financial sanctions (EO 13808); loss of trade credit lines.
+2018,Venezuela,primary_aluminum,65.0,4.8,60.2,0.0,0.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Bauxite 0 kt alumina 0 kt; Venalum produces 60.2 kt with <80 cells active; hyperinflation.
+2019,Venezuela,primary_aluminum,8.0,0.0,8.0,0.0,0.0,USGS/CVG,Amtliche_Registerstatistik,March 7-12 nationwide blackouts; potlines freeze and solidify molten metal; Alcasa destroyed; Venalum shutdown.
+2020,Venezuela,primary_aluminum,20.0,0.0,20.0,250.0,110.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 20.0 kt (e); dismantling of Alcasa Lines 3 and 4 reduction cells.
+2021,Venezuela,primary_aluminum,38.3,0.0,38.3,250.0,80.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1: Primary aluminum 20-38.3 kt; Venalum operates 145 reactivated cells (8.9% capacity).
+2022,Venezuela,primary_aluminum,47.0,0.0,47.0,250.0,80.0,USGS/CVG,Amtliche_Registerstatistik,USGS Table 1 (Advance Release): Primary aluminum 47.0 kt (e); Bauxilum refinery 80.0 kt (e).
+2023,Venezuela,primary_aluminum,35.0,0.0,35.0,200.0,70.0,USGS/CVG,Amtliche_Repraesentativstatistik,Venalum operates isolated potlines (<10% capacity); sporadic spot ingot sales.
+2024,Venezuela,primary_aluminum,30.0,0.0,30.0,150.0,50.0,USGS/CVG,Amtliche_Repraesentativstatistik,Trace industrial production; negotiations with international traders for smelter refurbishment.
+2025,Venezuela,primary_aluminum,25.0,0.0,25.0,150.0,50.0,USGS/CVG,Amtliche_Repraesentativstatistik,Baseline trace output; Alcasa primary smelting permanently ceased; Venalum minimal operations.
+2026,Venezuela,primary_aluminum,25.0,0.0,25.0,150.0,50.0,USGS/CVG,Strukturelle_Modellkalibrierung,Structural baseline projection (<5% installed capacity); primary aluminum industry requires >$1.6B overhaul.

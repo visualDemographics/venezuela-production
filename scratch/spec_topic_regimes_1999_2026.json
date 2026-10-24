@@ -1,0 +1,21 @@
+{
+  "study_id": "Monaldi_Bahar_Rodriguez_Venezuela_Post1999_Sanctions_2022",
+  "title": "Empirical Econometric Benchmarks: Venezuelan Oil Collapse, Institutional Degradation, and Sanctions (1999-2026)",
+  "authors": "Francisco Rodriguez, Francisco Monaldi, Igor Hernandez, Dany Bahar, Sebastian Bustos, Miguel Angel Santos",
+  "journal": "Latin American Economic Review (Vol 31:6) / Resources Policy (Vol 72:102116) / Brookings Institution",
+  "year": "2019-2022",
+  "doi": "10.60758/laer.v31.33 / 10.1016/j.resourpol.2021.102116",
+  "sample_size_n": "Monthly firm-level panel of Orinoco Basin JVs (2008-2020, N=1,800+ firm-months) & OPEC/BCV national registry (1970-2026)",
+  "findings": [
+    "Break 7 (2002 Coup Crisis): Q2 2002 oil output dipped by ~300 kb/d; 2002 real GDP contracted by -8.9% (BCV official register).",
+    "Break 8 (2002-2003 Oil Strike): Dismissal of ~18,000 PDVSA engineers/technicians (40% workforce); crude oil output collapsed from 2.90M bpd (Nov 2002) to 0.25M bpd (Jan 2003); cumulative 2002-2003 GDP fell -16.0%.",
+    "Break 8 Long-Term Hysteretic Impact (Monaldi et al. 2021): Loss of reservoir management capability permanently shifted extraction decline curves; output plateaued at 2.4-2.6M bpd during 2004-2014 boom.",
+    "Break 9 (2013 Maduro Succession & FX Collapse): Oil output declined from 2.40M bpd (2013) to 1.91M bpd (July 2017) BEFORE US financial sanctions, driven by cash flow divertion, contractor default, and hyperinflation (Bahar et al. 2019).",
+    "Break 10 (2017 Financial Sanctions EO 13808): Prohibited US market debt issuance; impeded PDVSA debt restructuring and CITGO dividends; accelerated credit constraints.",
+    "Break 10 (2019 Oil Sanctions EO 13850): SDN designation of PDVSA, US crude import embargo, and prohibition of diluent (naphtha) exports needed to blend Orinoco extra-heavy crude; crude output plummeted to 512 kb/d (2020).",
+    "Econometric DiD Estimate (Rodriguez 2022 LAER): Difference-in-differences across Orinoco JVs shows sanctions caused a loss of ~235,000 bpd (p < 0.01) among credit-accessible SFV firms (~50% of their post-2017 decline).",
+    "Pre-Trends vs Sanctions Decomposition: Econometric consensus reveals >70% of peak-to-trough per-capita oil drop occurred prior to 2017 sanctions; sanctions locked in terminal collapse.",
+    "Post-2022 Waivers (GL 41 / GL 44): Chevron GL 41 (Nov 2022) enabled recovery from 680 kb/d to 850 kb/d in 2024, demonstrating license-dependent capacity constraints."
+  ],
+  "verbatim_quote": "\"We use the differential access to credit of oil firms in Venezuela's Orinoco Basin to identify the economic effects of financial and oil sanctions on firm output. Using a panel of monthly firm-level oil production from 2008-2020, we provide difference-in-differences estimates showing that financial and oil sanctions led to large oil production losses among firms that had access to international credit prior to sanctions. The estimated effects explain around half of the output drop experienced in those firms since the adoption of sanctions, for a total loss of around USD 6.2bn a year at current oil prices. We also argue that by impeding the government from extending special financing arrangements to other firms in the area, sanctions precluded the adoption of policy decisions that could have stabilized production at pre-sanctions levels.\" (Rodriguez, 2022, Latin American Economic Review, Vol. 31, Art. 6, p. 1)"
+}
