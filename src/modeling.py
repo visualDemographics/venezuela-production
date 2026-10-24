@@ -522,6 +522,410 @@ def render_panel_i(ax, m, lang="en", is_standalone=False):
     ax.grid(axis="y", linestyle="--", alpha=0.4)
 
 
+def generate_commodity_descriptive_plots(m):
+    """Generate dedicated, high-resolution descriptive plots for each individual commodity/sector."""
+    df = m["panel"]
+    brk = m["breaks"]
+    yrs = df["year"].values
+
+    # Shared color palette
+    c_oil = "#1b4f72"
+    c_steel = "#7b241c"
+    c_alum = "#7d6608"
+    c_wood = "#1e8449"
+    c_serv = "#6c3483"
+    c_break = "#95a5a6"
+
+    # Common timepoints to highlight across plots
+    # 1. Crude Oil Plot
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 8.5), dpi=300, sharex=True)
+    # Top: Absolute extraction
+    ax1.plot(yrs, df["opec_secondary_kbd"], label="OPEC Secondary Sources (kb/d)", color=c_oil, lw=2.2)
+    ax1.plot(yrs, df["opec_direct_kbd"], label="OPEC Direct Communication / PDVSA (kb/d)", color="#2980b9", lw=1.6, ls="--")
+    ax1.plot(yrs, df["eia_crude_kbd"], label="U.S. EIA Crude & Condensate (kb/d)", color="#34495e", lw=1.4, ls=":")
+
+    # Highlight Oil Historical Timepoints
+    oil_events = [
+        (1974, "1974\nNationalization", 2976.0),
+        (1983, "1983\nViernes Negro", 1801.0),
+        (1998, "1998\nChávez (<$11/bbl)", 3134.0),
+        (2003, "2002/03\nPDVSA Strike", 2335.0),
+        (2013, "2013\nMaduro Transition", 2354.0),
+        (2019, "2019\nOil Embargo", 796.0),
+        (2020, "2020\nSanctions Nadir", 512.0),
+        (2024, "2024–26\nChevron GL 41", 867.0)
+    ]
+    for ey, elbl, eval_pt in oil_events:
+        ax1.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+        ax1.plot(ey, eval_pt, marker="o", color="#c0392b", markersize=5)
+        ax1.annotate(elbl, (ey, eval_pt + 140.0), fontsize=7.5, ha="center", fontweight="bold",
+                     bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef9e7", edgecolor="#d4ac0d", alpha=0.9))
+
+    ax1.set_ylabel("Crude Extraction (Thousand bbl/day)", fontsize=10, fontweight="bold")
+    ax1.set_title("Venezuela Crude Oil Production & Extraction Productivity (1970–2026)\nDescriptive Time Series with Historical Policy Shocks & Institutional Breaks", fontsize=12, fontweight="bold")
+    ax1.grid(linestyle="--", alpha=0.4)
+    ax1.legend(fontsize=8, loc="lower left")
+    ax1.set_ylim(0, 4200)
+
+    # Inset badge for Oil
+    badge_oil = "Descriptive Benchmarks:\n• 1970 Peak: 3,708 kb/d (118.8 bbl/cap)\n• 1998 Baseline: 3,134 kb/d (53.8 bbl/cap)\n• 2020 Nadir: 512 kb/d (6.6 bbl/cap)\n• 2026 Current: 990 kb/d (10.8 bbl/cap)\n• Peak-to-Current: -90.9% per capita"
+    ax1.text(0.72, 0.95, badge_oil, transform=ax1.transAxes, fontsize=8, verticalalignment="top",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#ebf5fb", edgecolor="#2980b9", alpha=0.9))
+
+    # Bottom: Per capita
+    ax2.plot(yrs, df["oil_bbl_per_cap_tier1"], label="Tier 1: Migration-Adjusted Resident Population (UN WPP / ENCOVI)", color=c_oil, lw=2.2)
+    ax2.plot(yrs, df["oil_bbl_per_cap_tier0"], label="Tier 0: Unadjusted Projection (>34M, Nennerproblem Distortion)", color="#7f8c8d", lw=1.6, ls=":")
+    ax2.plot(yrs, df["oil_bbl_per_worker_tier2"], label="Tier 2: Per Working-Age Resident (15–64 Cohort)", color="#c0392b", lw=1.6, ls="-.")
+    ax2.fill_between(yrs, df["oil_bbl_per_cap_tier0"], df["oil_bbl_per_cap_tier1"], color="#f5b7b1", alpha=0.4, label="Nennerproblem Gap (7.7M Diaspora Distortion)")
+
+    for ey, elbl, _ in oil_events:
+        ax2.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+
+    ax2.set_ylabel("Output per Resident (bbl / capita / year)", fontsize=10, fontweight="bold")
+    ax2.set_xlabel("Year", fontsize=10, fontweight="bold")
+    ax2.set_xlim(1970, 2026)
+    ax2.grid(linestyle="--", alpha=0.4)
+    ax2.legend(fontsize=8, loc="upper right")
+    plt.tight_layout()
+    out_oil = os.path.join(PLOTS_DIR, "commodity_oil_1970_2026.png")
+    plt.savefig(out_oil, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated dedicated commodity plot: {out_oil}")
+
+    # 2. Crude Steel Plot (SIDOR / CVG)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 8.5), dpi=300, sharex=True)
+    ax1.plot(yrs, df["venezuela_crude_steel_kt"], label="National Crude Steel Output (kt)", color=c_steel, lw=2.2)
+    ax1.plot(yrs, df["sidor_liquid_steel_kt"], label="SIDOR Matanzas Plant Liquid Steel (kt)", color="#e74c3c", lw=1.8, ls="--")
+    ax1.plot(yrs, df["sidor_installed_capacity_kt"], label="SIDOR Continuous Casting Capacity (4,300 kt/yr)", color="#34495e", lw=1.5, ls=":")
+
+    steel_events = [
+        (1975, "1975\nIron Ore Nat'n\n& Plan IV", 1104.0),
+        (1997, "1997\nPrivatization\n(Amazonia/Ternium)", 3855.0),
+        (2007, "2007 Apex\n5,005 kt (100% cap)", 5005.0),
+        (2008, "2008\nChávez Expropriation\n('Sidor Socialista')", 4344.0),
+        (2010, "2010\nGuri Power Cut\n& Sidetur Nat'n", 2207.0),
+        (2016, "2016\nFX & Refractory\nBrick Crisis", 553.0),
+        (2019, "2019\nMarch Blackout\nFurnace Shut-in", 50.0),
+        (2022, "2022 Nadir\n27 kt (0.4% cap)", 27.0)
+    ]
+    for ey, elbl, eval_pt in steel_events:
+        ax1.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+        ax1.plot(ey, eval_pt, marker="o", color="#c0392b", markersize=5)
+        ax1.annotate(elbl, (ey, eval_pt + 180.0), fontsize=7.5, ha="center", fontweight="bold",
+                     bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef9e7", edgecolor="#c0392b", alpha=0.9))
+
+    ax1.set_ylabel("Crude Steel Output (Thousand Metric Tons / kt)", fontsize=10, fontweight="bold")
+    ax1.set_title("Venezuela Crude Steel Production & Capacity Utilization (SIDOR / CVG) (1970–2026)\nDescriptive Evolution: Expansion, Privatization Apex, Expropriation & Paralysis", fontsize=12, fontweight="bold")
+    ax1.grid(linestyle="--", alpha=0.4)
+    ax1.legend(fontsize=8, loc="center left")
+    ax1.set_ylim(0, 5600)
+
+    badge_steel = "Descriptive Benchmarks:\n• 1970 Baseline: 927 kt (86.6 kg/cap)\n• 2007 Record Apex: 5,005 kt (182.5 kg/cap)\n• 1998 Privatized Level: 3,585 kt (153.2 kg/cap)\n• 2022 Nadir: 27 kt (1.0 kg/cap)\n• 2026 Current: 35 kt (1.2 kg/cap)\n• Peak-to-Current: -99.3% per capita"
+    ax1.text(0.72, 0.95, badge_steel, transform=ax1.transAxes, fontsize=8, verticalalignment="top",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#fadbd8", edgecolor="#c0392b", alpha=0.9))
+
+    # Bottom: Per capita
+    ax2.plot(yrs, df["steel_kg_per_cap_tier1"], label="Tier 1: Crude Steel per Resident (kg/capita/year, Migration-Adjusted)", color=c_steel, lw=2.2)
+    ax2.plot(yrs, df["steel_kg_per_cap_tier0"], label="Tier 0: Unadjusted Projection (>34M Population)", color="#7f8c8d", lw=1.6, ls=":")
+    ax2.plot(yrs, df["steel_kg_per_worker_tier2"], label="Tier 2: Per Working-Age Resident (kg/worker/year)", color="#27ae60", lw=1.6, ls="-.")
+    ax2.fill_between(yrs, df["steel_kg_per_cap_tier0"], df["steel_kg_per_cap_tier1"], color="#f5b7b1", alpha=0.4, label="Nennerproblem Emigration Buffer")
+
+    for ey, elbl, _ in steel_events:
+        ax2.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+
+    ax2.set_ylabel("Output per Resident (kg / capita / year)", fontsize=10, fontweight="bold")
+    ax2.set_xlabel("Year", fontsize=10, fontweight="bold")
+    ax2.set_xlim(1970, 2026)
+    ax2.grid(linestyle="--", alpha=0.4)
+    ax2.legend(fontsize=8, loc="upper right")
+    plt.tight_layout()
+    out_steel = os.path.join(PLOTS_DIR, "commodity_steel_1970_2026.png")
+    plt.savefig(out_steel, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated dedicated commodity plot: {out_steel}")
+
+    # 3. Primary Aluminum Plot (ALCASA & VENALUM / CVG)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 8.5), dpi=300, sharex=True)
+    ax1.plot(yrs, df["primary_aluminum_total_kt"], label="Total Primary Aluminum Output (kt)", color=c_alum, lw=2.2)
+    ax1.plot(yrs, df["venalum_aluminum_kt"], label="CVG Venalum Smelter (kt)", color="#b7950b", lw=1.8, ls="--")
+    ax1.plot(yrs, df["alcasa_aluminum_kt"], label="CVG Alcasa Smelter (kt)", color="#d4ac0d", lw=1.6, ls=":")
+
+    alum_events = [
+        (1978, "1978\nVenalum\nInauguration", 112.0),
+        (1987, "1987\nLos Pijiguaos\nBauxite Mine", 423.0),
+        (1989, "1989\nVenalum Line 5\nExpansion", 543.0),
+        (1997, "1997 Apex\n642 kt Record", 642.0),
+        (2009, "2009\nGuri Drought &\nPower Cut", 415.0),
+        (2013, "2013\nCurrency Deficit &\nInput Crisis", 186.0),
+        (2019, "2019 Blackout\nPotline Molten\nFreeze (8 kt)", 8.0),
+        (2026, "2026\nTrace Pots\n(~32 kt)", 32.0)
+    ]
+    for ey, elbl, eval_pt in alum_events:
+        ax1.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+        ax1.plot(ey, eval_pt, marker="o", color="#c0392b", markersize=5)
+        ax1.annotate(elbl, (ey, eval_pt + 25.0), fontsize=7.5, ha="center", fontweight="bold",
+                     bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef9e7", edgecolor="#b7950b", alpha=0.9))
+
+    ax1.set_ylabel("Primary Aluminum Output (Thousand Metric Tons / kt)", fontsize=10, fontweight="bold")
+    ax1.set_title("Venezuela Primary Aluminum & Bauxite Production (ALCASA & VENALUM / CVG) (1970–2026)\nDescriptive Evolution: Hydroelectric Integration, Export Apex & Potline Freezing", fontsize=12, fontweight="bold")
+    ax1.grid(linestyle="--", alpha=0.4)
+    ax1.legend(fontsize=8, loc="center left")
+    ax1.set_ylim(0, 750)
+
+    badge_alum = "Descriptive Benchmarks:\n• 1970 Baseline: 22.5 kt (2.1 kg/cap)\n• 1997 All-Time Record: 642.0 kt (28.1 kg/cap)\n• 1998 Baseline: 570.0 kt (24.4 kg/cap)\n• 2019 Blackout Nadir: 8.0 kt (0.3 kg/cap)\n• 2026 Current: 32.0 kt (1.1 kg/cap)\n• Peak-to-Current: -96.1% per capita"
+    ax1.text(0.72, 0.95, badge_alum, transform=ax1.transAxes, fontsize=8, verticalalignment="top",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#fefde8", edgecolor="#b7950b", alpha=0.9))
+
+    # Bottom: Per capita
+    ax2.plot(yrs, df["aluminum_kg_per_cap_tier1"], label="Tier 1: Aluminum per Resident (kg/capita/year, Migration-Adjusted)", color=c_alum, lw=2.2)
+    ax2.plot(yrs, df["aluminum_kg_per_cap_tier0"], label="Tier 0: Unadjusted Projection (>34M Population)", color="#7f8c8d", lw=1.6, ls=":")
+    ax2.fill_between(yrs, df["aluminum_kg_per_cap_tier0"], df["aluminum_kg_per_cap_tier1"], color="#f5b7b1", alpha=0.4, label="Nennerproblem Emigration Buffer")
+
+    for ey, elbl, _ in alum_events:
+        ax2.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+
+    ax2.set_ylabel("Output per Resident (kg / capita / year)", fontsize=10, fontweight="bold")
+    ax2.set_xlabel("Year", fontsize=10, fontweight="bold")
+    ax2.set_xlim(1970, 2026)
+    ax2.grid(linestyle="--", alpha=0.4)
+    ax2.legend(fontsize=8, loc="upper right")
+    plt.tight_layout()
+    out_alum = os.path.join(PLOTS_DIR, "commodity_aluminum_1970_2026.png")
+    plt.savefig(out_alum, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated dedicated commodity plot: {out_alum}")
+
+    # 4. Industrial Forestry & Wood Plot (PROFORCA / FAOSTAT)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 8.5), dpi=300, sharex=True)
+    round_k = df["wood_industrial_roundwood_m3"] / 1000.0
+    sawn_k = df["wood_sawnwood_m3"] / 1000.0
+    ax1.plot(yrs, round_k, label="Industrial Roundwood Production (Thousand m³ / FAOSTAT)", color=c_wood, lw=2.2)
+    ax1.plot(yrs, sawn_k, label="Sawnwood Production (Thousand m³ / FAOSTAT)", color="#27ae60", lw=1.8, ls="--")
+
+    wood_events = [
+        (1970, "1966–70s\nCabrera Malo\nUverito Pine Planting", 558.0),
+        (1988, "1988\nPROFORCA\nFounded", 900.0),
+        (1999, "1999 Apex\n1,467k m³ (70% Pine)", 1466.9),
+        (2008, "2008 Peak\n2,295k m³ Reporting", 2295.0),
+        (2012, "2012\nMaderas del Orinoco\nReorganization", 1296.0),
+        (2018, "2014–18\nEquipment Breakdown\n& Dry Season Fires", 1317.0),
+        (2019, "2019\nMavetur JV\n(Turkish Glenmore)", 1317.0),
+        (2026, "2026 Current\n1,364k m³ (Flag E)", 1364.0)
+    ]
+    for ey, elbl, eval_pt in wood_events:
+        ax1.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+        ax1.plot(ey, eval_pt, marker="o", color="#c0392b", markersize=5)
+        ax1.annotate(elbl, (ey, eval_pt + 80.0), fontsize=7.5, ha="center", fontweight="bold",
+                     bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef9e7", edgecolor="#27ae60", alpha=0.9))
+
+    ax1.set_ylabel("Forestry Output (Thousand m³)", fontsize=10, fontweight="bold")
+    ax1.set_title("Venezuela Industrial Forestry & Wood Production (CVG PROFORCA / FAOSTAT) (1970–2026)\nDescriptive Evolution: Uverito Plantation Afforestation, Industrial Apex & Mavetur Shift", fontsize=12, fontweight="bold")
+    ax1.grid(linestyle="--", alpha=0.4)
+    ax1.legend(fontsize=8, loc="upper left")
+    ax1.set_ylim(0, 2600)
+
+    badge_wood = "Descriptive Benchmarks:\n• 1970 Baseline: 558.0k m³ (52.1 m³/1k cap)\n• 1999 Plantation Apex: 1,466.9k m³ (62.6 m³/1k cap)\n• 1998 Pre-Chávez: 1,165.0k m³ (49.8 m³/1k cap)\n• 2008 Reporting Peak: 2,295.0k m³ (81.6 m³/1k cap)\n• 2026 Current: 1,364.0k m³ (47.6 m³/1k cap)\n• Peak-to-Current: -24.0% per capita"
+    ax1.text(0.72, 0.95, badge_wood, transform=ax1.transAxes, fontsize=8, verticalalignment="top",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#eafaf1", edgecolor="#27ae60", alpha=0.9))
+
+    # Bottom: Per capita
+    ax2.plot(yrs, df["wood_m3_per_1k_cap_tier1"], label="Tier 1: Roundwood per 1,000 Residents (m³/1k cap, Migration-Adjusted)", color=c_wood, lw=2.2)
+    ax2.plot(yrs, df["wood_m3_per_1k_cap_tier0"], label="Tier 0: Unadjusted Projection (>34M Population)", color="#7f8c8d", lw=1.6, ls=":")
+    ax2.fill_between(yrs, df["wood_m3_per_1k_cap_tier0"], df["wood_m3_per_1k_cap_tier1"], color="#f5b7b1", alpha=0.4, label="Nennerproblem Emigration Buffer")
+
+    for ey, elbl, _ in wood_events:
+        ax2.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+
+    ax2.set_ylabel("Roundwood per 1,000 Residents (m³)", fontsize=10, fontweight="bold")
+    ax2.set_xlabel("Year", fontsize=10, fontweight="bold")
+    ax2.set_xlim(1970, 2026)
+    ax2.grid(linestyle="--", alpha=0.4)
+    ax2.legend(fontsize=8, loc="upper right")
+    plt.tight_layout()
+    out_wood = os.path.join(PLOTS_DIR, "commodity_wood_1970_2026.png")
+    plt.savefig(out_wood, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated dedicated commodity plot: {out_wood}")
+
+    # 5. Tertiary Services Plot
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(13, 8.5), dpi=300, sharex=True)
+    ax1.plot(yrs, df["services_gva_constant_2015_usd_b"], label="Services Value-Added (Billion Constant 2015 USD, UN/WB)", color=c_serv, lw=2.2)
+    ax1.plot(yrs, df["services_gva_ppp_constant_2017_int_usd_b"], label="Services GVA in Constant 2017 PPP USD (Billion)", color="#8e44ad", lw=1.8, ls="--")
+
+    serv_events = [
+        (1974, "1974\nPetro-Dollar Boom\n& Public Sector", 72.0),
+        (1983, "1983 Viernes Negro\nServices Peak (61% GDP)", 101.4),
+        (1989, "1989\nCaracazo Shock\n(-8.6% GDP)", 84.5),
+        (1994, "1994 Banco Latino\nBailout (11% GDP)", 97.2),
+        (1998, "1998\nChávez Election", 112.0),
+        (2013, "2013 Volume Peak\n$213.6B (UN SNAAMA)", 213.6),
+        (2020, "2020 Nadir\n$61.2B (-71.4%)", 61.2),
+        (2026, "2026 Current\n$80.5B (Dollarized)", 80.5)
+    ]
+    for ey, elbl, eval_pt in serv_events:
+        ax1.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+        ax1.plot(ey, eval_pt, marker="o", color="#c0392b", markersize=5)
+        ax1.annotate(elbl, (ey, eval_pt + 10.0), fontsize=7.5, ha="center", fontweight="bold",
+                     bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef9e7", edgecolor="#8e44ad", alpha=0.9))
+
+    ax1.set_ylabel("Services Real GVA (Billion USD)", fontsize=10, fontweight="bold")
+    ax1.set_title("Venezuela Tertiary Services Value-Added, Employment & Labor Productivity (1970–2026)\nDescriptive Evolution: Banking Crises, Consumption Booms, Hyperinflation & Informalization", fontsize=12, fontweight="bold")
+    ax1.grid(linestyle="--", alpha=0.4)
+    ax1.legend(fontsize=8, loc="upper left")
+    ax1.set_ylim(0, 360)
+
+    badge_serv = "Descriptive Benchmarks:\n• 1970 Baseline: $56.4B ($5,271/cap)\n• 1983 GDP Share Peak: 61.05% of GDP\n• 1998 Baseline: $112.0B ($4,786/cap)\n• 2013 Volume Peak: $213.6B ($7,143/cap)\n• 2020 Nadir: $61.2B ($2,168/cap)\n• 2026 Current: $80.5B ($2,811/cap)\n• Peak-to-Current: -60.6% per capita"
+    ax1.text(0.72, 0.95, badge_serv, transform=ax1.transAxes, fontsize=8, verticalalignment="top",
+             bbox=dict(boxstyle="round,pad=0.3", facecolor="#f4ecf7", edgecolor="#8e44ad", alpha=0.9))
+
+    # Bottom: Per capita and labor productivity
+    ax2_twin = ax2.twinx()
+    l1 = ax2.plot(yrs, df["services_real_gva_per_cap_tier1_usd"], label="Tier 1: Services GVA per Resident (Constant 2015 USD, Migration-Adjusted)", color=c_serv, lw=2.2)
+    l2 = ax2.plot(yrs, df["services_real_gva_per_cap_tier0_usd"], label="Tier 0: Unadjusted Projection (>34M Population)", color="#7f8c8d", lw=1.6, ls=":")
+    l3 = ax2_twin.plot(yrs, df["services_labor_productivity_idx_2015_100"], label="Real Services Labor Productivity Index (2015=100)", color="#d35400", lw=2.0, ls="-.")
+
+    for ey, elbl, _ in serv_events:
+        ax2.axvline(ey, color=c_break, linestyle=":", lw=1.0, alpha=0.7)
+
+    ax2.set_ylabel("Services GVA / Resident (USD)", fontsize=10, fontweight="bold", color=c_serv)
+    ax2_twin.set_ylabel("Labor Productivity Index (2015=100)", fontsize=10, fontweight="bold", color="#d35400")
+    ax2.set_xlabel("Year", fontsize=10, fontweight="bold")
+    ax2.set_xlim(1970, 2026)
+    ax2.grid(linestyle="--", alpha=0.4)
+
+    lines_all = l1 + l2 + l3
+    labels_all = [l.get_label() for l in lines_all]
+    ax2.legend(lines_all, labels_all, fontsize=7.5, loc="upper right")
+    plt.tight_layout()
+    out_serv = os.path.join(PLOTS_DIR, "commodity_services_1970_2026.png")
+    plt.savefig(out_serv, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated dedicated commodity plot: {out_serv}")
+
+    # 6. Multi-Sector Synoptic Overview (5 stacked panels)
+    fig, axes = plt.subplots(5, 1, figsize=(14, 16), dpi=300, sharex=True)
+
+    # 1. Oil
+    axes[0].plot(yrs, df["opec_secondary_kbd"], color=c_oil, lw=2.0, label="Oil (kb/d)")
+    axes[0].set_ylabel("Oil (kb/d)", fontsize=8.5, fontweight="bold")
+    axes[0].legend(loc="upper left", fontsize=7.5)
+    axes[0].grid(linestyle="--", alpha=0.4)
+
+    # 2. Steel
+    axes[1].plot(yrs, df["venezuela_crude_steel_kt"], color=c_steel, lw=2.0, label="Steel (kt)")
+    axes[1].set_ylabel("Steel (kt)", fontsize=8.5, fontweight="bold")
+    axes[1].legend(loc="upper left", fontsize=7.5)
+    axes[1].grid(linestyle="--", alpha=0.4)
+
+    # 3. Aluminum
+    axes[2].plot(yrs, df["primary_aluminum_total_kt"], color=c_alum, lw=2.0, label="Aluminum (kt)")
+    axes[2].set_ylabel("Aluminum (kt)", fontsize=8.5, fontweight="bold")
+    axes[2].legend(loc="upper left", fontsize=7.5)
+    axes[2].grid(linestyle="--", alpha=0.4)
+
+    # 4. Wood
+    axes[3].plot(yrs, round_k, color=c_wood, lw=2.0, label="Roundwood (k m³)")
+    axes[3].set_ylabel("Wood (k m³)", fontsize=8.5, fontweight="bold")
+    axes[3].legend(loc="upper left", fontsize=7.5)
+    axes[3].grid(linestyle="--", alpha=0.4)
+
+    # 5. Services
+    axes[4].plot(yrs, df["services_gva_constant_2015_usd_b"], color=c_serv, lw=2.0, label="Services GVA ($B)")
+    axes[4].set_ylabel("Services ($B)", fontsize=8.5, fontweight="bold")
+    axes[4].set_xlabel("Year", fontsize=9.5, fontweight="bold")
+    axes[4].legend(loc="upper left", fontsize=7.5)
+    axes[4].grid(linestyle="--", alpha=0.4)
+
+    # Annotate vertical time points on all 5 subplots
+    all_timepoints = [1974, 1983, 1989, 1992, 1994, 1998, 2002, 2003, 2013, 2019]
+    timepoint_names = {
+        1974: "1974 Nat'n",
+        1983: "1983 Viernes Negro",
+        1989: "1989 Caracazo",
+        1992: "1992 Coup",
+        1994: "1994 B. Latino",
+        1998: "1998 Chávez",
+        2002: "2002 Coup",
+        2003: "2003 Strike",
+        2013: "2013 Maduro",
+        2019: "2019 Sanctions/Blackout"
+    }
+    for ax_idx in range(5):
+        for tp in all_timepoints:
+            axes[ax_idx].axvline(tp, color=c_break, linestyle=":", lw=0.9, alpha=0.6)
+            if ax_idx == 0:
+                axes[ax_idx].text(tp, 3800.0, timepoint_names[tp], rotation=90, fontsize=6.5, ha="right", va="top", color="#2c3e50")
+
+    fig.suptitle("Venezuela Multi-Sector Production Trajectories (1970–2026)\nSynchronized Physical Output Evolution Across the 10 Key Historical Structural Breaks", fontsize=13, fontweight="bold", y=0.995)
+    plt.tight_layout(rect=[0, 0.01, 1, 0.99])
+    out_multi = os.path.join(PLOTS_DIR, "commodities_multi_sector_overview_1970_2026.png")
+    plt.savefig(out_multi, dpi=300)
+    plt.close(fig)
+    print(f"✓ Generated multi-sector overview plot: {out_multi}")
+
+    # 7. Multi-Sector Per-Capita Synoptic Overview (5 stacked panels)
+    fig_pc, axes_pc = plt.subplots(5, 1, figsize=(14, 16), dpi=300, sharex=True)
+
+    # 1. Oil per capita
+    axes_pc[0].plot(yrs, df["oil_bbl_per_cap_tier1"], color=c_oil, lw=2.0, label="Tier 1: Oil (bbl/cap/yr, Migration-Adjusted)")
+    axes_pc[0].plot(yrs, df["oil_bbl_per_cap_tier0"], color="#7f8c8d", lw=1.5, ls=":", label="Tier 0: Unadjusted Projection (>34M)")
+    axes_pc[0].fill_between(yrs, df["oil_bbl_per_cap_tier0"], df["oil_bbl_per_cap_tier1"], color="#f5b7b1", alpha=0.35)
+    axes_pc[0].set_ylabel("Oil (bbl/cap/yr)", fontsize=8.5, fontweight="bold")
+    axes_pc[0].legend(loc="upper right", fontsize=7.5)
+    axes_pc[0].grid(linestyle="--", alpha=0.4)
+    axes_pc[0].set_ylim(0, 135)
+
+    # 2. Steel per capita
+    axes_pc[1].plot(yrs, df["steel_kg_per_cap_tier1"], color=c_steel, lw=2.0, label="Tier 1: Steel (kg/cap/yr, Migration-Adjusted)")
+    axes_pc[1].plot(yrs, df["steel_kg_per_cap_tier0"], color="#7f8c8d", lw=1.5, ls=":", label="Tier 0: Unadjusted Projection (>34M)")
+    axes_pc[1].fill_between(yrs, df["steel_kg_per_cap_tier0"], df["steel_kg_per_cap_tier1"], color="#f5b7b1", alpha=0.35)
+    axes_pc[1].set_ylabel("Steel (kg/cap/yr)", fontsize=8.5, fontweight="bold")
+    axes_pc[1].legend(loc="upper right", fontsize=7.5)
+    axes_pc[1].grid(linestyle="--", alpha=0.4)
+    axes_pc[1].set_ylim(0, 210)
+
+    # 3. Aluminum per capita
+    axes_pc[2].plot(yrs, df["aluminum_kg_per_cap_tier1"], color=c_alum, lw=2.0, label="Tier 1: Aluminum (kg/cap/yr, Migration-Adjusted)")
+    axes_pc[2].plot(yrs, df["aluminum_kg_per_cap_tier0"], color="#7f8c8d", lw=1.5, ls=":", label="Tier 0: Unadjusted Projection (>34M)")
+    axes_pc[2].fill_between(yrs, df["aluminum_kg_per_cap_tier0"], df["aluminum_kg_per_cap_tier1"], color="#f5b7b1", alpha=0.35)
+    axes_pc[2].set_ylabel("Aluminum (kg/cap/yr)", fontsize=8.5, fontweight="bold")
+    axes_pc[2].legend(loc="upper right", fontsize=7.5)
+    axes_pc[2].grid(linestyle="--", alpha=0.4)
+    axes_pc[2].set_ylim(0, 35)
+
+    # 4. Wood per capita
+    axes_pc[3].plot(yrs, df["wood_m3_per_1k_cap_tier1"], color=c_wood, lw=2.0, label="Tier 1: Roundwood (m³/1k cap, Migration-Adjusted)")
+    axes_pc[3].plot(yrs, df["wood_m3_per_1k_cap_tier0"], color="#7f8c8d", lw=1.5, ls=":", label="Tier 0: Unadjusted Projection (>34M)")
+    axes_pc[3].fill_between(yrs, df["wood_m3_per_1k_cap_tier0"], df["wood_m3_per_1k_cap_tier1"], color="#f5b7b1", alpha=0.35)
+    axes_pc[3].set_ylabel("Wood (m³/1k cap)", fontsize=8.5, fontweight="bold")
+    axes_pc[3].legend(loc="upper right", fontsize=7.5)
+    axes_pc[3].grid(linestyle="--", alpha=0.4)
+    axes_pc[3].set_ylim(0, 95)
+
+    # 5. Services per capita
+    axes_pc[4].plot(yrs, df["services_real_gva_per_cap_tier1_usd"], color=c_serv, lw=2.0, label="Tier 1: Services GVA ($/cap, Constant 2015 USD)")
+    axes_pc[4].plot(yrs, df["services_real_gva_per_cap_tier0_usd"], color="#7f8c8d", lw=1.5, ls=":", label="Tier 0: Unadjusted Projection (>34M)")
+    axes_pc[4].fill_between(yrs, df["services_real_gva_per_cap_tier0_usd"], df["services_real_gva_per_cap_tier1_usd"], color="#f5b7b1", alpha=0.35)
+    axes_pc[4].set_ylabel("Services ($/cap)", fontsize=8.5, fontweight="bold")
+    axes_pc[4].set_xlabel("Year", fontsize=9.5, fontweight="bold")
+    axes_pc[4].legend(loc="upper right", fontsize=7.5)
+    axes_pc[4].grid(linestyle="--", alpha=0.4)
+    axes_pc[4].set_ylim(0, 8000)
+
+    for ax_idx in range(5):
+        for tp in all_timepoints:
+            axes_pc[ax_idx].axvline(tp, color=c_break, linestyle=":", lw=0.9, alpha=0.6)
+            if ax_idx == 0:
+                axes_pc[ax_idx].text(tp, 130.0, timepoint_names[tp], rotation=90, fontsize=6.5, ha="right", va="top", color="#2c3e50")
+
+    fig_pc.suptitle("Venezuela Multi-Sector Production Per Capita (1970–2026)\nSynchronized Per-Capita Output (Tier 1 Resident vs. Tier 0 Projection) Across the 10 Historical Breaks", fontsize=13, fontweight="bold", y=0.995)
+    plt.tight_layout(rect=[0, 0.01, 1, 0.99])
+    out_per_cap = os.path.join(PLOTS_DIR, "commodities_per_capita_overview_1970_2026.png")
+    plt.savefig(out_per_cap, dpi=300)
+    plt.close(fig_pc)
+    print(f"✓ Generated multi-sector per-capita overview plot: {out_per_cap}")
+
+
 def generate_individual_plots(m):
     """Render and save individual Panels A through I and the standalone waterfall."""
     renderers = [
@@ -592,6 +996,7 @@ def main():
     print("=" * 60)
     datasets = load_datasets(DATASETS_DIR)
     models = compute_models(datasets)
+    generate_commodity_descriptive_plots(models)
     generate_individual_plots(models)
     generate_composite_matrix(models, lang="en")
     generate_composite_matrix(models, lang="de")
